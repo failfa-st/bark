@@ -1,0 +1,22 @@
+{
+  "name": "express-bark",
+  "description": "A simple express server for Bark by Suno",
+  "type": "module",
+  "license": "AGPL",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "prepare": "pip3 install .",
+    "download:model": "python -m bark --text \"You are all set up.\""
+  },
+  "dependencies": {
+    "express": "4.18.2",
+    "execa": "7.1.1",
+    "globby": "13.1.4",
+    "nanoid": "4.0.2"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8",
+    "nodemon": "^2.0.22"
+  }
+}

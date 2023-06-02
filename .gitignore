@@ -1,2 +1,13 @@
 __pycache__/
 suno_bark.egg-info/
+
+# Generated
+/out
+/bark_generation.wav
+/build/lib/bark
+
+# Node
+node_modules
+
+# Intellij
+.idea

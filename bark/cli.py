@@ -1,5 +1,4 @@
 import argparse
-from typing import Dict, Optional, Union
 import os
 
 from scipy.io.wavfile import write as write_wav

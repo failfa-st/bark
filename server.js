@@ -62,6 +62,7 @@ app.post("/generate", async (request, response) => {
       download: `http://127.0.0.1:${currentPort}/uploads/${fileName}`,
       browser: `http://127.0.0.1:${currentPort}/files/${fileName}`,
       text,
+      filePath: path.join(process.cwd(), "out", fileName),
       fileName,
       textTemperature,
       waveformTemperature,

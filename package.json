@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js",
-    "prepare": "pip3 install .",
     "download:model": "python -m bark --text \"You are all set up.\""
   },
   "dependencies": {

@@ -89,8 +89,8 @@ interface ResponseObject {
 
 | Property            | required | Type    | Default Value  | Description                                     |
 | ------------------- | -------- | ------- |----------------| ----------------------------------------------- |
-| text                | true     | string  |                | The text to be processed.                       |
-| fileName            | false    | string  | "[nanoid].wav" | The name of the output file.                    |
-| textTemperature     | false    | number  | 0.7            | The temperature for text generation.            |
-| waveformTemperature | false    | number  | 0.7            | The temperature for waveform generation.        |
-| silent              | false    | boolean | false          | Indicates whether the process should be silent. |
+| text                | yes      | string  |                | The text to be processed.                       |
+| fileName            | no       | string  | \[nanoid\].wav | The name of the output file.                    |
+| textTemperature     | no       | number  | 0.7            | The temperature for text generation.            |
+| waveformTemperature | no       | number  | 0.7            | The temperature for waveform generation.        |
+| silent              | no       | boolean | true           | Indicates whether the process should be silent. |

@@ -12,12 +12,27 @@ up.
 
 ## Setup
 
+Certain steps (to get the miniconda running with GPU supprt) were boldly copied from [this Gradio Web-ui for Bark](https://github.com/Fictiverse/bark).
+TBH, I have no Idea what I did here but it might just work :). If you know your way around python and setting this up manually, feel free to contribute.
+I am no Python developer and was only able to adjust things based on trial and error, (adjusting types in the python code)
+
+### Windows
+
+You can try the [one click installer](https://github.com/failfa-st/express-bark/releases/tag/v0.1.0) (express-bark.zip).
+Simply download it, extract it and double-click `run.bat` (and hope that it works).
+If it doesn't work feel free to open an issue, so that we can look into fixing any issues that might occur.
+
+Thank you
+
+### MacOS & Linux
+
 1. Clone this repository
 2. Ensure that you have `python@3` installed (we use `pip3` to install requirements)
 3. Ensure that you have `node@18` installed (you can run `nvm use` if you use [NVM](https://github.com/nvm-sh/nvm))
 4. run `npm install` to install npm packages and python requirements
+5. run `pip install .`
    - (once) run `npm run download:model` to download the model (also executes [bark with a test generation](#download))
-5. run `npm run dev` (or `npm start` if you don't plan to make changes to [`server.js`](server.js))
+6. run `npm run dev` (or `npm start` if you don't plan to make changes to [`server.js`](server.js))
 
 ### Download
 

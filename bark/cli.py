@@ -20,7 +20,7 @@ def cli():
     parser.add_argument("--output_dir", type=str, default=".", help="directory to save the outputs")
     parser.add_argument(
         "--history_prompt",
-        type=Optional[Union[Dict, str]],
+        type=str,
         default=None,
         help="history choice for audio cloning",
     )
@@ -48,7 +48,7 @@ def cli():
     input_text: str = args.get("text")
     output_filename: str = args.get("output_filename")
     output_dir: str = args.get("output_dir")
-    history_prompt: Optional[Union[Dict, str]] = args.get("history_prompt")
+    history_prompt: str = args.get("history_prompt")
     text_temp: float = args.get("text_temp")
     waveform_temp: float = args.get("waveform_temp")
     silent: bool = args.get("silent")

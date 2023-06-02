@@ -69,7 +69,7 @@ RESPONSE: ResponseObject
 ```ts
 interface RequestParams {
   text: string;
-  /* @default "audio.wav" */
+  /* @default "[nanoid].wav" */
   fileName?: string;
   /* @default 0.7 */
   textTemperature?: number;
@@ -87,10 +87,10 @@ interface ResponseObject {
 
 #### Parameters
 
-| Property            | required | Type    | Default Value | Description                                     |
-| ------------------- | -------- | ------- | ------------- | ----------------------------------------------- |
-| text                | true     | string  |               | The text to be processed.                       |
-| fileName            | false    | string  | "audio.wav"   | The name of the output file.                    |
-| textTemperature     | false    | number  | 0.7           | The temperature for text generation.            |
-| waveformTemperature | false    | number  | 0.7           | The temperature for waveform generation.        |
-| silent              | false    | boolean | false         | Indicates whether the process should be silent. |
+| Property            | required | Type    | Default Value  | Description                                     |
+| ------------------- | -------- | ------- |----------------| ----------------------------------------------- |
+| text                | true     | string  |                | The text to be processed.                       |
+| fileName            | false    | string  | "[nanoid].wav" | The name of the output file.                    |
+| textTemperature     | false    | number  | 0.7            | The temperature for text generation.            |
+| waveformTemperature | false    | number  | 0.7            | The temperature for waveform generation.        |
+| silent              | false    | boolean | false          | Indicates whether the process should be silent. |

@@ -27,7 +27,7 @@ Thank you
 ### MacOS & Linux
 
 1. Clone this repository
-2. Ensure that you have `python@3` installed (we use `pip3` to install requirements)
+2. Ensure that you have `python` installed
 3. Ensure that you have `node@18` installed (you can run `nvm use` if you use [NVM](https://github.com/nvm-sh/nvm))
 4. run `npm install` to install npm packages and python requirements
 5. run `pip install .`

@@ -1,6 +1,6 @@
 # 🐶 Express Bark API
 
-A Node/Express server for [Bark](https://github.com/suno-ai/bark). Please refer t the original docs for up to date
+A Node/Express server for [Bark](https://github.com/suno-ai/bark). Please refer to the original docs for up to date
 information on Bark by [Suno](https://www.suno.ai/).
 
 ## Notice

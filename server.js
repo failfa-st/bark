@@ -29,6 +29,7 @@ app.get("/voices", async (request, response) => {
 app.post("/generate", async (request, response) => {
   const {
     text,
+    voice = "announcer",
     fileName = `${nanoid()}.wav`,
     textTemperature = 0.7,
     silent = true,
@@ -47,6 +48,8 @@ app.post("/generate", async (request, response) => {
     fileName,
     "--output_dir",
     "out",
+     "--history_prompt",
+    voice,
     "--text_temp",
     textTemperature,
     "--waveform_temp",

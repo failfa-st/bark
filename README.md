@@ -29,10 +29,10 @@ Thank you
 1. Clone this repository
 2. Ensure that you have `python` installed
 3. Ensure that you have `node@18` installed (you can run `nvm use` if you use [NVM](https://github.com/nvm-sh/nvm))
-4. run `npm install` to install npm packages and python requirements
-5. run `pip install .`
-   - (once) run `npm run download:model` to download the model (also executes [bark with a test generation](#download))
-6. run `npm run dev` (or `npm start` if you don't plan to make changes to [`server.js`](server.js))
+4. run `npm install` to install npm dependencies
+5. run `pip install .` to install python requirements
+6. (once) run `npm run download:model` to download the model (also executes [bark with a test generation](#download))
+7. run `npm run dev` (or `npm start` if you don't plan to make changes to [`server.js`](server.js))
 
 ### Download
 

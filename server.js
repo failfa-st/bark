@@ -96,6 +96,7 @@ async function generate({
     download: `http://127.0.0.1:${currentPort}/uploads/${fileName}`,
     browser: `http://127.0.0.1:${currentPort}/files/${fileName}`,
     text,
+    voice,
     filePath: path.join(process.cwd(), "out", fileName),
     fileName,
     textTemperature,
@@ -140,15 +141,18 @@ app.post("/generate", async (request, response) => {
     const filePath = path.join(process.cwd(), "out", fileName);
     command
       .on("end", function () {
-        console.log("files have been merged successfully");
-        console.log(filePath);
+        console.log(`Done! Output audio file is saved at: '${filePath}'`);
+
         response.status(201).json({
+          text,
+          fileNameBase,
+          fileName,
           filePath,
+          batchSize,
+          voice: task.voice,
           download: `http://127.0.0.1:${currentPort}/uploads/${fileName}`,
           browser: `http://127.0.0.1:${currentPort}/files/${fileName}`,
-          fileName,
-          answers,
-          fileNameBase,
+          chunks: answers,
         });
       })
       .on("error", function (error) {

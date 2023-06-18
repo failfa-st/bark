@@ -104,10 +104,14 @@ interface ResponseObject {
   browser: string;
   fileName: string;
   fileNameBase: string;
-  answers: Array<{
+  voice: string;
+  batchSize: string;
+  text: string;
+  chunks: Array<{
     download: string;
     browser: string;
     text: string;
+    voice: string;
     filePath: string;
     fileName: string;
     textTemperature: number;

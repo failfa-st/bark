@@ -92,13 +92,27 @@ interface RequestParams {
   textTemperature?: number;
   /* @default 0.7 */
   waveformTemperature?: number;
+  /* @default 1 */
+  batchSize?: number;
   /* @default false */
   silent?: boolean;
 }
 
 interface ResponseObject {
+  filePath: string;
   download: string;
   browser: string;
+  fileName: string;
+  fileNameBase: string;
+  answers: Array<{
+    download: string;
+    browser: string;
+    text: string;
+    filePath: string;
+    fileName: string;
+    textTemperature: number;
+    waveformTemperature: number;
+  }>;
 }
 ```
 
@@ -110,4 +124,5 @@ interface ResponseObject {
 | fileName            | no       | string  | \[nanoid\].wav | The name of the output file.                    |
 | textTemperature     | no       | number  | 0.7            | The temperature for text generation.            |
 | waveformTemperature | no       | number  | 0.7            | The temperature for waveform generation.        |
+| batchSize           | no       | number  | 1              | The batch-size (parallel generation).           |
 | silent              | no       | boolean | true           | Indicates whether the process should be silent. |

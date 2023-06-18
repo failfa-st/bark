@@ -1,4 +1,5 @@
 import argparse
+from typing import Dict, Optional, Union
 import os
 
 from scipy.io.wavfile import write as write_wav
@@ -18,11 +19,11 @@ def cli():
     )
     parser.add_argument("--output_dir", type=str, default=".", help="directory to save the outputs")
     parser.add_argument(
-        "--history_prompt",
-        type=str,
-        default=None,
-        help="history choice for audio cloning",
-    )
+             "--history_prompt",
+             type=str,
+             default=None,
+             help="history choice for audio cloning",
+         )
     parser.add_argument(
         "--text_temp",
         default=0.7,

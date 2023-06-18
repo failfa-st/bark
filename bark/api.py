@@ -1,3 +1,5 @@
+from typing import Dict, Optional, Union
+
 import numpy as np
 
 from .generation import codec_decode, generate_coarse, generate_fine, generate_text_semantic
@@ -83,7 +85,7 @@ def save_as_prompt(filepath, full_generation):
 
 def generate_audio(
     text: str,
-    history_prompt:str = None,
+    history_prompt: str = None,
     text_temp: float = 0.7,
     waveform_temp: float = 0.7,
     silent: bool = False,

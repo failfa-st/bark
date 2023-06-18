@@ -16,9 +16,7 @@ up.
 
 ## Setup
 
-Certain steps (to get the miniconda running with GPU supprt) were boldly copied from [this Gradio Web-ui for Bark](https://github.com/Fictiverse/bark).
-TBH, I have no Idea what I did here but it might just work :). If you know your way around python and setting this up manually, feel free to contribute.
-I am no Python developer and was only able to adjust things based on trial and error, (adjusting types in the python code)
+Certain steps (to get the miniconda running with GPU support) were boldly copied from [this Gradio Web-ui for Bark](https://github.com/Fictiverse/bark).
 
 ### Windows
 
@@ -26,7 +24,7 @@ You can try the [one click installer](https://github.com/failfa-st/express-bark/
 Simply download it, extract it and double-click `run.bat` (and hope that it works).
 If it doesn't work feel free to open an issue, so that we can look into fixing any issues that might occur.
 
-Thank you
+Thank you.
 
 ### MacOS & Linux
 

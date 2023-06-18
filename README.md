@@ -5,7 +5,11 @@ information on Bark by [Suno](https://www.suno.ai/).
 
 ## Notice
 
-Bark is limited to ~13 seconds af output. This demo does not (yet) handle longer texts
+Bark is limited to ~13 seconds af output.  
+This demo allows unlimited length and returns an array of audio files as well as the concatenated audio file.  
+The concatenation is done via [ffmpeg](https://ffmpeg.org/).
+
+> Make sure to have [ffmpeg](https://ffmpeg.org/) installed on your machine.
 
 This project (currently) assumes that you have used npm before and are comfortable ensuring your environment to be set
 up.
@@ -103,7 +107,7 @@ interface ResponseObject {
 #### Parameters
 
 | Property            | required | Type    | Default Value  | Description                                     |
-| ------------------- | -------- | ------- |----------------| ----------------------------------------------- |
+| ------------------- | -------- | ------- | -------------- | ----------------------------------------------- |
 | text                | yes      | string  |                | The text to be processed.                       |
 | fileName            | no       | string  | \[nanoid\].wav | The name of the output file.                    |
 | textTemperature     | no       | number  | 0.7            | The temperature for text generation.            |

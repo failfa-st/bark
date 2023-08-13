@@ -6,43 +6,10 @@ import { execa } from "execa";
 import { globby } from "globby";
 import { nanoid } from "nanoid";
 import ffmpeg from "fluent-ffmpeg";
+import { condaPython, chunkify } from "./utils.js";
+
 
 const app = express();
-
-export function chunkify(text, { maxWords = 30, maxCharacters = 200 } = {}) {
-  const chunks = [];
-  const cleanedText = text
-    .replace(/\([^()]*\)|\[\d+](?=\[\d+])?/g, "")
-    .replace(/\s+/, " ");
-
-  const sentences = cleanedText
-    .replace(/([.?!:;])\s/g, "$1|||")
-    .split("|||")
-    .map((sentence) => sentence.trim().replace(/ +/g, " "));
-
-  let currentChunk = "";
-
-  sentences.forEach((sentence, index) => {
-    const nextChunk = [currentChunk, sentence].join(" ").trim();
-
-    if (
-      nextChunk.split(" ").length < maxWords &&
-      nextChunk.length < maxCharacters
-    ) {
-      currentChunk = nextChunk; // Add the sentence to the current chunk
-    } else {
-      chunks.push(currentChunk); // Add the current chunk to the list of chunks
-      currentChunk = sentence; // Start a new chunk with the current sentence
-    }
-
-    // Add the last chunk if we have reached the end of the sentences
-    if (index === sentences.length - 1) {
-      chunks.push(currentChunk);
-    }
-  });
-
-  return chunks;
-}
 
 app.use(express.json());
 app.use("/uploads", express.static("out"));
@@ -71,7 +38,8 @@ async function generate({
   silent = true,
   waveformTemperature = 0.7,
 }) {
-  const args = [
+  const pythonScript = "python"; 
+  let args = [
     "-m",
     "bark",
     "--text",
@@ -90,7 +58,12 @@ async function generate({
   if (silent) {
     args.push("--silent");
   }
-  await execa("python", args, { stdio: "inherit" });
+
+  args = args.join(' ');
+
+  const command = condaPython('expressbark', `${args}`);
+
+  await execa(command, { stdio: "inherit" });
 
   return {
     download: `http://127.0.0.1:${currentPort}/uploads/${fileName}`,
@@ -160,6 +133,10 @@ app.post("/generate", async (request, response) => {
       })
       .mergeToFile(filePath, ".tmp");
   } catch (error) {
+
+
+    console.log(error)
+
     response.status(500).json({ message: error.message });
   }
 });

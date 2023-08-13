@@ -165,7 +165,16 @@ app.post("/generate", async (request, response) => {
 });
 
 const server = http.createServer(app);
-let currentPort = 3000;
+
+const portArgIndex = process.argv.indexOf('--port');
+let currentPort = 3000; // default
+
+if (portArgIndex !== -1 && process.argv.length > portArgIndex + 1) {
+  const parsedPort = parseInt(process.argv[portArgIndex + 1], 10);
+  if (!isNaN(parsedPort)) {
+    currentPort = parsedPort;
+  }
+}
 
 function startServer() {
   server.listen(currentPort, () => {
